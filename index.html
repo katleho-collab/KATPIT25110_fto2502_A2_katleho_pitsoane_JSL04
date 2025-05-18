@@ -13,11 +13,11 @@
       sizes="32x32"
       href="./assets/favicon.svg"
     />
-    <script type="module" src="./scripts.js"></script>
+    <script type="module" src="./script.js"></script>
     <title>Kanban Task Management</title>
   </head>
   <body>
-    <!-- Navigation Sidebar: Contains the logo, navigation links for boards, and theme toggle. -->
+    <!-- Navigation Sidebar -->
     <nav class="side-bar" id="side-bar-div">
       <div id="side-logo-div">
         <img id="logo" src="./assets/logo-light.svg" alt="logo-light" />
@@ -27,7 +27,7 @@
         <button class="board-btn">Launch Career</button>
       </div>
     </nav>
-    <!-- Main Layout: Header with board title, add task button, and main content area for task columns. -->
+    <!-- Main Layout -->
     <div id="layout">
       <header id="header" class="sticky-header">
         <div class="header-name-div">
@@ -40,16 +40,16 @@
             Launch Career
           </h2>
         </div>
+        <button id="new-task-btn" class="new-task-btn">+ New Task</button>
       </header>
       <div class="container">
         <main class="card-column-main">
-          <!-- Task Columns: Display tasks grouped by status (TODO, DOING, DONE). -->
+          <!-- TODO Column -->
           <div class="column-div" data-status="todo">
             <div id="todo-head-div" class="column-head-div">
               <span class="dot" id="todo-dot"></span>
               <h4 id="toDoText" class="columnHeader">TODO (0)</h4>
             </div>
-            <!-- Tasks container for TODO -->
             <div class="tasks-container"></div>
           </div>
           <!-- DOING Column -->
@@ -58,7 +58,6 @@
               <span class="dot" id="doing-dot"></span>
               <h4 id="doingText" class="columnHeader">DOING (0)</h4>
             </div>
-            <!-- Tasks container for DOING -->
             <div class="tasks-container"></div>
           </div>
           <!-- DONE Column -->
@@ -67,7 +66,6 @@
               <span class="dot" id="done-dot"></span>
               <h4 id="doneText" class="columnHeader">DONE (0)</h4>
             </div>
-            <!-- Tasks container for DONE -->
             <div class="tasks-container"></div>
           </div>
         </main>
@@ -77,10 +75,11 @@
     <div id="task-modal" class="modal">
       <div class="modal-content">
         <span id="close-modal" class="close">×</span>
-        <h2>Task Details</h2>
+        <h2>Task</h2>
         <label for="task-title">Title</label>
         <input type="text" id="task-title" placeholder="e.g. Launch Epic Career">
         <label for="task-description">Description</label>
+        <div id="description-alert" class="alert-bar" style="display: none;">❗Please Fill Out This Field.</div>
         <textarea id="task-description" placeholder="e.g. Create a killer Resume"></textarea>
         <label for="task-status">Status</label>
         <select id="task-status">
@@ -89,7 +88,7 @@
           <option value="done">Done</option>
         </select>
         <div class="modal-buttons">
-          <button id="save-changes">Save Changes</button>
+          <button id="save-changes">Create Task</button>
           <button id="delete-task">Delete Task</button>
         </div>
       </div>
