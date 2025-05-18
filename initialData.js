@@ -25,13 +25,13 @@ export const initialTasks = [
   },
   {
     id: 12,
-    title: "Contribute to Open Source Projects 🌐",
+    title: "Explore Es6 Features🚀",
     description: "Gain practical experience and collaborate with others in the software development community",
     status: "done",
   },
   {
     id: 13,
-    title: "Build Portfolio Projects 🛠️",
+    title: "Have Fun🥳",
     description: "Create a portfolio showcasing your skills and projects to potential employers",
     status: "done",
   },
